@@ -27,7 +27,7 @@ public class CreateUserTest {
     }
 
 
-    @DisplayName("Можно зарегистрироваться с паролем из 6 символов")
+    @DisplayName("Проверяем, что можно зарегистрироваться с паролем из 6 символов")
     @Test
     public void signUpPositiveTest() {
         String expectedEnterTitle = "Вход";
@@ -42,7 +42,7 @@ public class CreateUserTest {
                 expectedEnterTitle, actualEnterTitle);
     }
 
-    @DisplayName("Можно зарегистрироваться с паролем из 7 символов")
+    @DisplayName("Провнеряем, что можно зарегистрироваться с паролем из 7 символов")
     @Test
     public void signUpWithSevenSymbolsPassPositiveTest() {
         String expectedEnterTitle = "Вход";
