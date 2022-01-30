@@ -9,7 +9,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class UserOperations {
+public class UserOperations extends Base {
 
     public static final String EMAIL_POSTFIX = "@yandex.ru";
 

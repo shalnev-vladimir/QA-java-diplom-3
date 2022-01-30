@@ -1,0 +1,12 @@
+com\LogInTest.class
+com\CreateUserYandexBrowserTest.class
+com\LogOutTest.class
+com\MovingBetweenIngredientsSectionsYandexTest.class
+com\MovingFromPersonalAccountToTheBurgerBuilderYandexTest.class
+com\CreateUserTest.class
+com\MovingFromPersonalAccountToTheBurgerBuilderTest.class
+com\EnterIntoAUserProfileYandexBrowserTest.class
+com\LogOutYandexBrowserTest.class
+com\EnterIntoAUserProfileTest.class
+com\IfMovingBetweenSectionsOnTheMainPageWorksTest.class
+com\LogInYandexBrowserTest.class
