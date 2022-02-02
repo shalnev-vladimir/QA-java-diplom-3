@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e5f1589-6d4e-49ea-a05e-57ff56943c34" name="Changes" comment="" />
+    <list default="true" id="3e5f1589-6d4e-49ea-a05e-57ff56943c34" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/CreateUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/CreateUserTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +26,6 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/com/UserOperations.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="22sBBW4KFTjVEd6Z1uyXTn5aVW8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,7 +33,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../QA-Java-Diplom-1" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -45,8 +45,8 @@
       <command value="mvn allure:serve" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreateUserYandexTest">
-    <configuration name="CreateUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.EnterIntoAUserProfileTest">
+    <configuration name="EnterIntoAUserProfileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="praktikum-web-diploma" />
       <extension name="coverage">
         <pattern>
@@ -55,13 +55,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com" />
-      <option name="MAIN_CLASS_NAME" value="com.CreateUserTest" />
+      <option name="MAIN_CLASS_NAME" value="com.EnterIntoAUserProfileTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateUserYandexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EnterIntoAUserProfileYandexBrowserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="praktikum-web-diploma" />
       <extension name="coverage">
         <pattern>
@@ -70,13 +70,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com" />
-      <option name="MAIN_CLASS_NAME" value="com.CreateUserYandexTest" />
+      <option name="MAIN_CLASS_NAME" value="com.EnterIntoAUserProfileYandexBrowserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateUserYandexTest.signUpWithSixCharacterPassPositiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EnterIntoAUserProfileYandexBrowserTest.enterIntoAUserAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="praktikum-web-diploma" />
       <extension name="coverage">
         <pattern>
@@ -85,14 +85,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com" />
-      <option name="MAIN_CLASS_NAME" value="com.CreateUserYandexTest" />
-      <option name="METHOD_NAME" value="signUpWithSixCharacterPassPositiveTest" />
+      <option name="MAIN_CLASS_NAME" value="com.EnterIntoAUserProfileYandexBrowserTest" />
+      <option name="METHOD_NAME" value="enterIntoAUserAccount" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LogInTest.logInByClickingPersonalAccountButtonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovingFromPersonalAccountToTheBurgerBuilderYandexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="praktikum-web-diploma" />
       <extension name="coverage">
         <pattern>
@@ -101,14 +101,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com" />
-      <option name="MAIN_CLASS_NAME" value="com.LogInTest" />
-      <option name="METHOD_NAME" value="logInByClickingPersonalAccountButtonTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.MovingFromPersonalAccountToTheBurgerBuilderYandexTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonalProfileEnterYandexTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="com in praktikum-web-diploma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="praktikum-web-diploma" />
       <extension name="coverage">
         <pattern>
@@ -117,8 +116,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com" />
-      <option name="MAIN_CLASS_NAME" value="com.PersonalProfileEnterYandexTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -136,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CreateUserYandexTest" />
-        <item itemvalue="JUnit.CreateUserTest" />
-        <item itemvalue="JUnit.CreateUserYandexTest.signUpWithSixCharacterPassPositiveTest" />
-        <item itemvalue="JUnit.LogInTest.logInByClickingPersonalAccountButtonTest" />
-        <item itemvalue="JUnit.PersonalProfileEnterYandexTest" />
+        <item itemvalue="JUnit.EnterIntoAUserProfileTest" />
+        <item itemvalue="JUnit.com in praktikum-web-diploma" />
+        <item itemvalue="JUnit.EnterIntoAUserProfileYandexBrowserTest" />
+        <item itemvalue="JUnit.EnterIntoAUserProfileYandexBrowserTest.enterIntoAUserAccount" />
+        <item itemvalue="JUnit.MovingFromPersonalAccountToTheBurgerBuilderYandexTest" />
       </list>
     </recent_temporary>
   </component>
