@@ -5,11 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Condition.visible;
-
 public class LoginPage {
-
-    public static final String loginURL = "https://stellarburgers.nomoreparties.site/login";
 
     // button Войти
     @FindBy(how = How.CSS,using = ".button_button_size_medium__3zxIa")
@@ -32,8 +28,8 @@ public class LoginPage {
     private SelenideElement enterTitle;
 
     // returns text of the title "Войти"
-    public String isEnterTitleDisplayed() {
-        return enterTitle.shouldBe(Condition.visible).getText();
+    public String EnterTitle() {
+        return enterTitle.shouldBe(Condition.exist).getText();
     }
 
     // scroll to recover password button
@@ -68,7 +64,4 @@ public class LoginPage {
         clickEnterButton();
     }
 
-    // public void getEnterButtonText() {
-    //   enterButton.waitUntil(visible, 5000);
-    // }
 }

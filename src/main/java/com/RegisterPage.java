@@ -1,5 +1,6 @@
 package com;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -23,22 +24,22 @@ public class RegisterPage {
     @FindBy(how = How.CSS,using = ".button_button__33qZ0")
     private SelenideElement signUpButton;
 
-    // error message .input__error
+    // error message
     @FindBy(how = How.CSS,using = ".input__error")
     private SelenideElement tooShortPasswordErrorMessage;
 
     // "Войти" button
     @FindBy(how = How.CSS,using = ".Auth_link__1fOlj")
-    private SelenideElement RegistrationPageEnterButton;
+    private SelenideElement registrationPageEnterButton;
 
     // click enter button
     public void clickRegistrationPageEnterButton() {
-        RegistrationPageEnterButton.click();
+        registrationPageEnterButton.click();
     }
 
     // scroll to enter button
     public void scrollToRegistrationPageEnterButton() {
-        RegistrationPageEnterButton.scrollTo();
+        registrationPageEnterButton.scrollTo();
     }
 
 
@@ -59,11 +60,7 @@ public class RegisterPage {
 
     // clicks sign up button
     public void clickSignUpButton() {
-        signUpButton.click();
-    }
-
-    public void setTooShortPassword(String shortPassword) {
-        passInput.setValue(shortPassword);
+        signUpButton.shouldBe(Condition.enabled).click();
     }
 
     public String getTooShortPasswordErrorMessage() {
@@ -76,4 +73,5 @@ public class RegisterPage {
         setPassInput(password);
         clickSignUpButton();
     }
+
 }

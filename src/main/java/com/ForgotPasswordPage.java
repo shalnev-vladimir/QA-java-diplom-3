@@ -11,7 +11,8 @@ public class ForgotPasswordPage {
     public SelenideElement enterButton;
 
     // click Enter button
-    public void clickForgotPassEnterButton() {
+    public void clickEnterButtonOnForgotPassPage() {
         enterButton.click();
     }
+
 }

@@ -3,7 +3,10 @@ package com;
 import com.codeborne.selenide.*;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.After;
 import org.junit.Test;
+
+import static com.codeborne.selenide.Selenide.webdriver;
 import static org.junit.Assert.assertEquals;
 import com.codeborne.selenide.Selenide;
 import org.junit.Before;
@@ -23,26 +26,31 @@ public class CreateUserTest {
 
     @Before
     public void setUp() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.startMaximized = true;
+    }
+
+    @After
+    public void tearDown() {
+        webdriver().driver().close();
     }
 
 
     @DisplayName("Проверяем, что можно зарегистрироваться с паролем из 6 символов")
     @Test
-    public void signUpPositiveTest() {
+    public void signUpWithSixCharacterPasswordPositiveTest() {
         String expectedEnterTitle = "Вход";
 
         RegisterPage registerPage = Selenide.open(signUpURL, RegisterPage.class);
         registerPage.signUp(name, email, password);
 
         LoginPage loginPage = Selenide.page(LoginPage.class);
-        String actualEnterTitle = loginPage.isEnterTitleDisplayed();
+        String actualEnterTitle = loginPage.EnterTitle();
 
         assertEquals("Expected title is " + expectedEnterTitle + ". But actual is " + actualEnterTitle,
                 expectedEnterTitle, actualEnterTitle);
     }
 
-    @DisplayName("Провнеряем, что можно зарегистрироваться с паролем из 7 символов")
+    @DisplayName("Проверяем, что можно зарегистрироваться с паролем из 7 символов")
     @Test
     public void signUpWithSevenSymbolsPassPositiveTest() {
         String expectedEnterTitle = "Вход";
@@ -51,7 +59,7 @@ public class CreateUserTest {
         registerPage.signUp(name, email, sevenSymbolsPassword);
 
         LoginPage loginPage = Selenide.page(LoginPage.class);
-        String actualEnterTitle = loginPage.isEnterTitleDisplayed();
+        String actualEnterTitle = loginPage.EnterTitle();
 
         assertEquals("Expected title is " + expectedEnterTitle + ". But actual is " + actualEnterTitle,
                 expectedEnterTitle, actualEnterTitle);
@@ -59,7 +67,7 @@ public class CreateUserTest {
 
     @DisplayName("Проверяет, что нельзя зарегистрироваться с паролем из 5 символов")
     @Test
-    public void signUpWithInvalidPassNegativeTest() {
+    public void signUpWithFiveCharacterPassNegativeTest() {
 
         RegisterPage registerPage = Selenide.open(signUpURL, RegisterPage.class);
 

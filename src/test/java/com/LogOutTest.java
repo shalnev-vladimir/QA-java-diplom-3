@@ -19,7 +19,7 @@ public class LogOutTest {
     @Before
     public void setUp() {
         responseData = userOperations.register();
-        Configuration.browserSize = "1920x1080";
+        Configuration.startMaximized = true;
     }
 
     @After
@@ -29,7 +29,7 @@ public class LogOutTest {
 
     @DisplayName("Проверяет, что пользователь может разлогиниться")
     @Test
-    public void logOutTest() {
+    public void logOutPositiveTest() {
         String expectedEnterTitle = "Вход";
 
         LoginPage loginPage = Selenide.open(loginURL, LoginPage.class);
@@ -41,7 +41,7 @@ public class LogOutTest {
         PersonalAccountPage personalAccountPage = Selenide.page(PersonalAccountPage.class);
         personalAccountPage.clickExitButton();
 
-        String actualEnterTitle = loginPage.isEnterTitleDisplayed();
+        String actualEnterTitle = loginPage.EnterTitle();
 
         assertEquals("User didn't move to the login page", expectedEnterTitle, actualEnterTitle);
     }

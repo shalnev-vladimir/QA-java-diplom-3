@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.CreateUserYandexTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.668 s - in com.CreateUserYandexTest

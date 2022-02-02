@@ -22,7 +22,7 @@ public class LogInTest {
     @Before
     public void setUp() {
         responseData = userOperations.register();
-        Configuration.browserSize = "1920x1080";
+        Configuration.startMaximized = true;
     }
 
     @After
@@ -32,7 +32,7 @@ public class LogInTest {
 
     @DisplayName("Логин при клике на кнопку Войти на Главной странице")
     @Test
-    public void logInByClickingEnterToAccountButton() {
+    public void logInByClickingEnterToAccountButtonTest() {
 
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickLogInToAccountButton();
@@ -52,7 +52,7 @@ public class LogInTest {
 
     @DisplayName("Логин при клике на кнопку Личный Аккаунт на Главной странице")
     @Test
-    public void logInByClickingPersonalAccountButton() {
+    public void logInByClickingPersonalAccountButtonTest() {
 
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickPersonalAccountButton();
@@ -72,7 +72,7 @@ public class LogInTest {
 
     @DisplayName("Логин при клике на кнопку Войти на странице Регистрации")
     @Test
-    public void logInByClickingEnterButtonOnRegistrationPage() {
+    public void logInByClickingEnterButtonOnRegistrationPageTest() {
 
         RegisterPage registerPage = Selenide.open(registerPageURL, RegisterPage.class);
         registerPage.scrollToRegistrationPageEnterButton();
@@ -94,14 +94,14 @@ public class LogInTest {
 
     @DisplayName("Логин при клике на кнопку Войти на странице Восстановления Пароля")
     @Test
-    public void logInByClickingEnterButtonOnForgotPasswordPage() {
+    public void logInByClickingEnterButtonOnForgotPasswordPageTest() {
 
         LoginPage loginPage = Selenide.open(loginURL, LoginPage.class);
         loginPage.scrollToRecoverPassButton();
         loginPage.clickRecoverPassButton();
 
         ForgotPasswordPage forgotPasswordPage = Selenide.page(ForgotPasswordPage.class);
-        forgotPasswordPage.clickForgotPassEnterButton();
+        forgotPasswordPage.clickEnterButtonOnForgotPassPage();
 
         loginPage.logIn(responseData.get("email"),responseData.get("password"));
 

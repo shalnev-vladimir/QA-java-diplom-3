@@ -5,19 +5,17 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import java.time.Duration;
-
 public class MainPage {
 
     // log in to account button
     @FindBy(how = How.CSS,using = ".button_button__33qZ0")
     private SelenideElement logInButton;
 
-    // main page logo "Соберите бургер" //h1[text()='Соберите бургер'] .text_type_main-large
+    // main page logo "Соберите бургер"
     @FindBy(how = How.XPATH,using = "//h1[text()='Соберите бургер']")
     private SelenideElement setUpBurgerTitle;
 
-    // personal account button .AppHeader_header__link__3D_hX:nth-child(3) .AppHeader_header__linkText__3q_va
+    // personal account button
     @FindBy(how = How.CSS,using = ".AppHeader_header__link__3D_hX:nth-child(3) .AppHeader_header__linkText__3q_va")
     private SelenideElement personalAccountButton;
 
@@ -50,13 +48,10 @@ public class MainPage {
         bunsTab.click();
     }
 
-    public String getBunsTabCssValue() {
-        return bunsTab.getCssValue("box-shadow");
-    }
-
     // if the Булки title visible
     public boolean ifBunsTitleVisible() {
-        return bunsTitle.is(Condition.visible);
+        if(bunsTitle.isDisplayed());
+        return true;
     }
 
     // click sauce tab
@@ -66,31 +61,19 @@ public class MainPage {
 
     // if the Соусы title visible
     public boolean ifSauceTitleVisible() {
-        return sauceTitle.is(Condition.visible);
-    }
-
-    public boolean isSauceTabSelected() {
-        return sauceTab.isSelected();
+        if (sauceTitle.isDisplayed());
+        return true;
     }
 
     // if the Начинки title visible
     public boolean ifToppingsTitleVisible() {
-        return toppingsTitle.is(Condition.visible);
+        if (toppingsTitle.isDisplayed());
+        return true;
     }
 
     // click Начинки tab
     public void clickToppingsTab() {
         toppingsTab.click();
-    }
-
-    // get toppings tab css value
-    public String getToppingsTabCssValue() {
-        return toppingsTab.getCssValue("box-shadow");
-    }
-
-    // get sauce tab css value
-    public String getSauceTabCssValue() {
-        return sauceTab.getCssValue("box-shadow");
     }
 
     // click personal account button
@@ -112,5 +95,6 @@ public class MainPage {
     public void clickLogInToAccountButton() {
         logInButton.shouldBe(Condition.exist).click();
     }
+
 }
 
