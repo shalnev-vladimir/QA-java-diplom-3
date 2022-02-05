@@ -16,38 +16,31 @@ public class ConstructorTest {
 
     public static final String mainPageURL = "https://stellarburgers.nomoreparties.site/";
 
-    @DisplayName("Успешный переход к блоку начинки")
     @Test
-    public void checkToppingTitleIsDisplayedTest() {
-
+    @DisplayName("Успешный переход к блоку начинки")
+    public void checkSwitchToToppingsSectionTest() {
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickToppingsTab();
-
-        boolean isTitleVisible = mainPage.ifToppingsTitleVisible();
-
-        assertTrue("Заголовок 'Начинки' не отображается", isTitleVisible);
+        boolean isFillingsTabActive = mainPage.isFillingsTabActive();
+        assertTrue("Нет переключения на раздел Начинки при клике на таб Начинки", isFillingsTabActive);
     }
 
-    @DisplayName("Успешный переход к блоку соусы")
     @Test
-    public void checkSauceTitleIsDisplayedTest() {
+    @DisplayName("Успешный переход к блоку начинки")
+    public void checkSwitchToBunsSectionTest() {
+        MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
+        mainPage.clickBunsTab();
+        boolean isBunsTabActive = mainPage.isBunsTabActive();
+        assertTrue("Нет переключения на раздел Булки при клике на таб Булки", isBunsTabActive);
+    }
 
+    @Test
+    @DisplayName("Успешный переход к блоку начинки")
+    public void checkSwitchToSaucesSectionTest() {
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickSauceTab();
-
-        boolean isTitleVisible = mainPage.ifSauceTitleVisible();
-
-        assertTrue("Заголовок 'Соусы' не отображается", isTitleVisible);
-    }
-
-    @DisplayName("Успешный переход к блоку булки")
-    @Test
-    public void checkBunsTitleIsDisplayedTest() {
-
-        MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
-        boolean isTitleVisible = mainPage.ifBunsTitleVisible();
-
-        assertTrue("Заголовок 'Булки' не отображается", isTitleVisible);
+        boolean isSaucesTabActive = mainPage.isSaucesTabActive();
+        assertTrue("Нет переключения на раздел Булки при клике на таб Булки", isSaucesTabActive);
     }
 
 }

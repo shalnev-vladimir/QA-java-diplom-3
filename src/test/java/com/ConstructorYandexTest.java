@@ -24,38 +24,31 @@ public class ConstructorYandexTest {
 
     public static final String mainPageURL = "https://stellarburgers.nomoreparties.site/";
 
-    @DisplayName("Переход к блоку Начинки на Главной странице. Яндекс Браузер.")
     @Test
-    public void checkToppingTitleIsDisplayedTest() {
-
+    @DisplayName("Успешный переход к блоку начинки. Яндекс браузер.")
+    public void checkSwitchToToppingsSectionPositiveTest() {
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickToppingsTab();
-
-        boolean isTitleVisible = mainPage.ifToppingsTitleVisible();
-
-        assertTrue("Заголовок 'Начинки' не отображается", isTitleVisible);
+        boolean isFillingsTabActive = mainPage.isFillingsTabActive();
+        assertTrue("Нет переключения на раздел Начинки при клике на таб Начинки", isFillingsTabActive);
     }
 
-    @DisplayName("Переход к блоку Соусы на Главной странице. Яндекс Браузер.")
     @Test
-    public void checkSauceTitleIsDisplayedTest() {
+    @DisplayName("Успешный переход к блоку начинки. Яндекс браузер.")
+    public void checkSwitchToBunsSectionPositiveTest() {
+        MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
+        mainPage.clickBunsTab();
+        boolean isBunsTabActive = mainPage.isBunsTabActive();
+        assertTrue("Нет переключения на раздел Булки при клике на таб Булки", isBunsTabActive);
+    }
 
+    @Test
+    @DisplayName("Успешный переход к блоку начинки. Яндекс браузер.")
+    public void checkSwitchToSaucesSectionPositiveTest() {
         MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
         mainPage.clickSauceTab();
-
-        boolean isTitleVisible = mainPage.ifSauceTitleVisible();
-
-        assertTrue("Заголовок 'Соусы' не отображается", isTitleVisible);
-    }
-
-    @DisplayName("Переход к блоку Булки на Главной странице. Яндекс Браузер.")
-    @Test
-    public void checkBunsTitleIsDisplayedTest() {
-
-        MainPage mainPage = Selenide.open(mainPageURL, MainPage.class);
-        boolean isTitleVisible = mainPage.ifBunsTitleVisible();
-
-        assertTrue("Заголовок 'Булки' не отображается", isTitleVisible);
+        boolean isSaucesTabActive = mainPage.isSaucesTabActive();
+        assertTrue("Нет переключения на раздел Соусы при клике на таб Соусы", isSaucesTabActive);
     }
 
 }
