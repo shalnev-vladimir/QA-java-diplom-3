@@ -71,7 +71,7 @@ public class MainPage {
         return currentActiveSection.getText().contentEquals("Соусы");
     }
 
-    // вытаскиваем текст активного таба (Булки)
+    // вытаскиваем текст активного таба (Булки.)
     public boolean isBunsTabActive() {
         return currentActiveSection.getText().contentEquals("Булки");
     }
