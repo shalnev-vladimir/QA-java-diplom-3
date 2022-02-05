@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.ConstructorYandexTest
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.832 s - in com.ConstructorYandexTest
