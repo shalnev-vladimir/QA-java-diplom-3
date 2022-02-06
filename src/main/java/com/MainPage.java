@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Condition.visible;
 
 public class MainPage {
 
@@ -43,32 +45,45 @@ public class MainPage {
     @FindBy(how = How.CSS,using = ".text:nth-child(5)")
     private SelenideElement toppingsTitle;
 
-    // click buns tab
-    public void clickBunsTab() {
-        bunsTab.click();
+    // весь блок "Булки"
+    @FindBy(how = How.CSS,using = ".BurgerIngredients_ingredients__menuContainer__Xu3Mo > ul:nth-child(2)")
+    private SelenideElement bunsSection;
+
+    // весь блок "Соусы"
+    @FindBy(how = How.CSS,using = ".BurgerIngredients_ingredients__menuContainer__Xu3Mo > ul:nth-child(4)")
+    private SelenideElement sauceSection;
+
+    // весь блок "Начинки"
+    @FindBy(how = How.CSS,using = ".BurgerIngredients_ingredients__menuContainer__Xu3Mo > ul:last-child")
+    private SelenideElement toppingsSection;
+
+    // сохраняем в переменную класс, который есть только у выбранного таба
+    @FindBy(how = How.CSS,using = ".tab_tab_type_current__2BEPc")
+    public SelenideElement currentActiveSection;
+
+    // вытаскиваем текст активного таба (Начинки)
+    public boolean isFillingsTabActive() {
+        return currentActiveSection.getText().contentEquals("Начинки");
     }
 
-    // if the Булки title visible
-    public boolean ifBunsTitleVisible() {
-        if(bunsTitle.isDisplayed());
-        return true;
+    // вытаскиваем текст активного таба (Соусы)
+    public boolean isSaucesTabActive() {
+        return currentActiveSection.getText().contentEquals("Соусы");
+    }
+
+    // вытаскиваем текст активного таба (Булки.)
+    public boolean isBunsTabActive() {
+        return currentActiveSection.getText().contentEquals("Булки");
+    }
+
+    // click buns tab
+    public void clickBunsTab() {
+        bunsTab.shouldBe(enabled).doubleClick();
     }
 
     // click sauce tab
     public void clickSauceTab() {
-        sauceTab.click();
-    }
-
-    // if the Соусы title visible
-    public boolean ifSauceTitleVisible() {
-        if (sauceTitle.isDisplayed());
-        return true;
-    }
-
-    // if the Начинки title visible
-    public boolean ifToppingsTitleVisible() {
-        if (toppingsTitle.isDisplayed());
-        return true;
+        sauceTab.shouldBe(enabled).click();
     }
 
     // click Начинки tab
@@ -83,12 +98,12 @@ public class MainPage {
 
     // scroll to "Соберите бургер" title
     public void scroolToSetUpBurgerTitle() {
-        setUpBurgerTitle.scrollTo().shouldBe(Condition.visible);
+        setUpBurgerTitle.scrollTo().shouldBe(visible);
     }
 
     // returns true if title "Соберите бургер" is displayed
     public boolean isSetUpBurgerTitleDisplayed() {
-        return setUpBurgerTitle.shouldBe(Condition.visible).isDisplayed();
+        return setUpBurgerTitle.shouldBe(visible).isDisplayed();
     }
 
     // clicks Войти в аккаунт button
